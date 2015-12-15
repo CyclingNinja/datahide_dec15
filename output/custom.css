@@ -1,10 +1,10 @@
 body {
-    font-size: 160%;
+    font-size: 140%;
     font-family: Lato, Ariel, sans-serif !important;
 }
 
 div.slides {
-    margin-top: -5%;
+    margin-top: -3% !important;
 }
 
 .left {
@@ -84,4 +84,14 @@ div.output_area .rendered_html img, div.output_area .rendered_html table {
 
 .align-center {
     text-align: center;
+}
+
+.reveal pre {
+    background-color: inherit;
+}
+
+.reveal pre code {
+    padding: inherit;
+    font-weight: bold;
+    font-size: 115%;
 }
