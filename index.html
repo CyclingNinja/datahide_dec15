@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<title>Why I Hate IDL</title>
+<title>index slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -106,8 +106,10 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
 .highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
 .highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
 .highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
 .highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
@@ -241,8 +243,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 <link rel="stylesheet" href="custom.css">
 
 
-<script src="reveal.js/plugin/highlight/highlight.js"></script>
-
+<script src="/reveal.js/plugin/highlight/highlight.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <!-- ##################################################################### -->
 <!-- UNCOMMENT THIS SECTION TO HIDE INPUT CODE                             -->
@@ -292,32 +293,7 @@ $(document).ready(function(){
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Disclaimer-1:-IDL-Can-Be-Useful">Disclaimer 1: IDL Can Be Useful<a class="anchor-link" href="#Disclaimer-1:-IDL-Can-Be-Useful">&#182;</a></h1><p>Legacy code, years of experience, other people in your group using it etc.</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Disclaimer-2:-I-am-a-Solar-Physicist">Disclaimer 2: I am a Solar Physicist<a class="anchor-link" href="#Disclaimer-2:-I-am-a-Solar-Physicist">&#182;</a></h1><p>This talk is primarily from my experience in Solar Physics, YMMV.</p>
-
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="What-is-IDL?">What is IDL?<a class="anchor-link" href="#What-is-IDL?">&#182;</a></h1><p>IDL is the <strong>Interactive Data Language</strong>.</p>
-<ul>
-<li>First released in 1977</li>
-<li>Vector Orientated Language</li>
-<li>Designed to be good at array manipulation</li>
-<li>Dynamically typed</li>
-</ul>
 
 </div>
 </div>
@@ -328,6 +304,7 @@ $(document).ready(function(){
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Reason-0:">Reason 0:<a class="anchor-link" href="#Reason-0:">&#182;</a></h1><h2 id="IDL-is-a-Terrible-Programming-Language">IDL is a Terrible <em>Programming Language</em><a class="anchor-link" href="#IDL-is-a-Terrible-Programming-Language">&#182;</a></h2><p>I mean:</p>
+<p>fOOL! SYTILL FOOL</p>
 
 </div>
 </div>
@@ -417,7 +394,7 @@ True
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Gratefully borrowed from PHP Manual Masterpeices - <a href="http://tinyurl.com/idlsucks">http://tinyurl.com/idlsucks</a></p>
+<p>Greatfully borrowed from PHP Manual Masterpeices - <a href="http://tinyurl.com/idlsucks">http://tinyurl.com/idlsucks</a></p>
 
 </div>
 </div>
@@ -436,16 +413,17 @@ True
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="SolarSoft---The-Legacy-IDL-Code-Base">SolarSoft - <em>The</em> Legacy IDL Code Base<a class="anchor-link" href="#SolarSoft---The-Legacy-IDL-Code-Base">&#182;</a></h2><div class='left'>
+<h2 id="The-Legacy-IDL-Code-Base"><em>The</em> Legacy IDL Code Base<a class="anchor-link" href="#The-Legacy-IDL-Code-Base">&#182;</a></h2><p>Currently most people in Solar Physics use IDL, and <strong>SolarSoft</strong> (SSW).</p>
+<div class='left'>
 <h3> Some Statistics </h3>
 <ul class='list'>
     <li> 16 GB </li>
     <li> 4,543 Directories </li>
     <li> 138,192 Files </li>
     <li> 24,383 IDL .pro files containing 3,982,599 lines. </li>
+    <li> 868 .h files containing 685,690 lines. </li>
     <li> 133 C (.c) files containing 119,976 lines. </li>
-    <li> <b>5,473,955 Million LOC </b> </li>
-    <li class='fragment'> Linux kernel 2.6.0 (Dec 2003) - 5,929,913 lines of code </li>
+    <li> <b>5,473,955 Million LOC </b></li>
 </ul>
 
 </div><div class='right fragment'>
@@ -493,7 +471,7 @@ True
     <li> 847 tests, with CI. </li>
     <li> Thriving community. </li>
     <li> Collaboration with Astropy.</li>
-    <li> Lots of functionality. </li>
+    <li> Lot's of functionality. </li>
 </ul>
 </div><div class='right'>
 
@@ -534,7 +512,7 @@ require(
             Reveal.initialize({
 
             // Display controls in the bottom right corner
-            controls: true,
+            //controls: true,
 
             // Display a presentation progress bar
             progress: true,
@@ -546,7 +524,7 @@ require(
             keyboard: true,
 
             // Enable touch events for navigation
-            touch: true,
+            //touch: true,
 
             // Enable the slide overview mode
             //overview: true,
@@ -556,9 +534,6 @@ require(
 
             // Loop the presentation
             //loop: false,
-            
-            // History
-            history: true,
 
             // Change the presentation direction to be RTL
             //rtl: false,
@@ -591,17 +566,8 @@ require(
 
             slideNumber: true,
 
-            multiplex: {
-                // Example values. To generate your own, see the socket.io server instructions.
-                secret: null, // null so the clients do not have control of the master presentation
-                id: 'c98b9b0cbf7b2e42', // id, obtained from socket.io server
-                url: 'mail.cadair.com:1948' // Location of your socket.io server
-            },
-
-
             // Optional libraries used to extend on reveal.js
             dependencies: [
-				{ src: 'reveal.js/plugin/multiplex/client.js'},
                 { src: "reveal.js/lib/js/classList.js",
                   condition: function() { return !document.body.classList; } },
                 { src: "reveal.js/plugin/notes/notes.js",
