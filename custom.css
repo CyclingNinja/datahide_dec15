@@ -91,7 +91,7 @@ div.output_area .rendered_html img, div.output_area .rendered_html table {
 }
 
 .reveal pre code {
-    padding: inherit;
+    padding: inherit;b
     font-weight: bold;
     font-size: 115%;
 }

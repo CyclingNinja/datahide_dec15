@@ -280,8 +280,10 @@ $(document).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Why-I-hate-IDL">Why I hate IDL<a class="anchor-link" href="#Why-I-hate-IDL">&#182;</a></h1><h2>Stuart Mumford</h2>
-<h2> The University of Sheffield</h2><p><img style='float: left; width: 30%; margin-top: 90px; height: 25%;' src='images/TUOS_Logo_CMYK_Keyline.svg'/> 
+<h1 id="How-I-learned-to-stop-worrying-and-love-SunPy">How I learned to stop worrying and love SunPy<a class="anchor-link" href="#How-I-learned-to-stop-worrying-and-love-SunPy">&#182;</a></h1><p><h2> Samuel Bennett</h2></p>
+<p><h2> The University of Sheffield</h2></p>
+<p><h2> 24th of February 2016 </h2>
+<img style='float: left; width: 30%; margin-top: 90px; height: 25%;' src='images/TUOS_Logo_CMYK_Keyline.svg'/> 
 <img style='float: right; width: 30%; margin-top: 90px; height: 25%;' src='images/sunpy_logo_long_800x380.png'/></p>
 
 </div>
@@ -292,166 +294,586 @@ $(document).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Disclaimer-1:-IDL-Can-Be-Useful">Disclaimer 1: IDL Can Be Useful<a class="anchor-link" href="#Disclaimer-1:-IDL-Can-Be-Useful">&#182;</a></h1><p>Legacy code, years of experience, other people in your group using it etc.</p>
-<h1 id="Disclaimer-2:-I-am-a-Solar-Physicist">Disclaimer 2: I am a Solar Physicist<a class="anchor-link" href="#Disclaimer-2:-I-am-a-Solar-Physicist">&#182;</a></h1><p>This talk is primarily from my experience in Solar Physics, YMMV.</p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Reason-0:">Reason 0:<a class="anchor-link" href="#Reason-0:">&#182;</a></h1><h2 id="IDL-is-a-Terrible-Programming-Language">IDL is a Terrible <em>Programming Language</em><a class="anchor-link" href="#IDL-is-a-Terrible-Programming-Language">&#182;</a></h2><p>I mean:</p>
-<p>fOOL! SYTILL FOOL</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<pre><code class="idl">
-IDL> arr = [1, 2, 3, 4]
-IDL> arr(2)
-       3
-IDL> arr[2]
-       3
-</code></pre>
-<pre><code class="idl fragment">
-IDL> systime(1)
-       1450114318.8865399
-IDL> dingbat(1)
-% Variable is undefined: DINGBAT.
-% Execution halted at: $MAIN$
-</code></pre>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="There-is-More">There is More<a class="anchor-link" href="#There-is-More">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<pre><code class="idl">
-IDL> 30000 + 30000
-   -5536
-</code></pre>
-<pre><code class="idl fragment">
-IDL> i = 1000
-IDL> help, i
-I               INT       =     1000
-IDL> i = 40000
-IDL> help, i
-I               LONG      =        40000
-</code></pre>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Save-the-best-for-last:">Save the best for last:<a class="anchor-link" href="#Save-the-best-for-last:">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<pre><code class="idl">
-IDL> if 0 then print, "True" else print, "False"
-False
-IDL> if 1 then print, "True" else print, "False"
-True
-</code></pre>
-<pre><code class="idl fragment">
-IDL> if 2 then print, "True" else print, "False"
-False
-IDL> if 3 then print, "True" else print, "False"
-True
-</code></pre>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Greatfully borrowed from PHP Manual Masterpeices - <a href="http://tinyurl.com/idlsucks">http://tinyurl.com/idlsucks</a></p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="The-Real-Reason">The Real Reason<a class="anchor-link" href="#The-Real-Reason">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-Legacy-IDL-Code-Base"><em>The</em> Legacy IDL Code Base<a class="anchor-link" href="#The-Legacy-IDL-Code-Base">&#182;</a></h2><p>Currently most people in Solar Physics use IDL, and <strong>SolarSoft</strong> (SSW).</p>
 <div class='left'>
-<h3> Some Statistics </h3>
-<ul class='list'>
-    <li> 16 GB </li>
-    <li> 4,543 Directories </li>
-    <li> 138,192 Files </li>
-    <li> 24,383 IDL .pro files containing 3,982,599 lines. </li>
-    <li> 868 .h files containing 685,690 lines. </li>
-    <li> 133 C (.c) files containing 119,976 lines. </li>
-    <li> <b>5,473,955 Million LOC </b></li>
+<h2>Contents</h2>
+<ol>
+<li> SunPy </li>
+    <ul>
+    <li> Aim of the community. </li>
+    <li> The current state of the software base. </li>
+    <li> Features, what SunPy can do for you. </li>
+    <li> What you can do for SunPy. </li>
+    </ul>
+<br/>
+<li> Macrospicules </li>
+    <ul>
+    <li> What are macrospicules? </li>
+    <li> Previous work. </li>
+    <li> Using Python to measure features. </li>
+    <li> A statistical analysis of macrospicules. </li>
+    </ul>
+</ol>
+</div><p><div class='right'></p>
+<p><h2></h2></p>
+<ol start="3">
+<li> Macrospicules affect on the atmosphere </li>
+    <ul>
+    <li> Do they actually affect the atmosphere? </li>
+    <li> Previous work and hypotheses. </li>
+    <li> A case study. </li>
+    <li> What next? </li>
+    </ul>
+</ol>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="SunPy">SunPy<a class="anchor-link" href="#SunPy">&#182;</a></h1><h2 id="You-can-and-should-use-Python-for-your-science.">You can and should use Python for your science.<a class="anchor-link" href="#You-can-and-should-use-Python-for-your-science.">&#182;</a></h2><h2 id="Disclaimer:-I-am-not-gods-gift-to-computer-programming.">Disclaimer: I am not gods gift to computer programming.<a class="anchor-link" href="#Disclaimer:-I-am-not-gods-gift-to-computer-programming.">&#182;</a></h2>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="What-is-SunPy?">What is SunPy?<a class="anchor-link" href="#What-is-SunPy?">&#182;</a></h1><p>"A project to facilitate and promote the use and development of a community-led, free and open-source solar data-analysis software based on the scientific Python environment"</p>
+<p>A library designed to provide core funtionality to enable people to do solar physics with Python.</p>
+<p>A community of solar physicits doing science using Python.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Why-Python?">Why Python?<a class="anchor-link" href="#Why-Python?">&#182;</a></h1><ol>
+<li> Python is becoming widely adopted amoung the scientiic community, as a scientific language. </li>
+<li> Easy to learn. </li>
+<li> A lot of new astronomical code is being written in Python, JWST and DKIST pipelinesw will be written in Python.</li>
+<li> A great deal of domain experts write packages in Python, and are freely available. </li>
+<li> Python is widely used outside of academia. </li>
+<li> A very transferable skill. </li>
+<li> Very flexible, can wrap C or FORTRAN, for when you need to go faster. </li>
+<li> SunPy specifially is being used extensively the Met Office's space weather forecasters.
+</ol>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="SunPy-is-a-Gateway-Drug">SunPy is a Gateway Drug<a class="anchor-link" href="#SunPy-is-a-Gateway-Drug">&#182;</a></h1><div class='left'>
+<ul class='logos'>
+    <li> <img src='./images/mpl-logo.png'> </li>
+    <li> <img src='./images/skimage_logo.png'> </li>
+    <li> <img src='./images/pandas_logo.png'> </li>
+</ul>
+</div><div class='right'>
+<ul class='logos'>
+    <li> <img src='./images/astropy-logo.png'> </li>
+    <li> <img src='./images/scikit-learn-logo.png'> </li>
+    <li> <img src='./images/jupyter-logo.png'> </li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Major-Features-of-SunPy">Major Features of SunPy<a class="anchor-link" href="#Major-Features-of-SunPy">&#182;</a></h1><ul>
+<li> Data Structures for Images, Spectra and Time Series Data. </li>
+<li> Data Retrival from VSO, JSOC, HEK, Helio, and other sources.</li>
+<li> Versioned Library Releases, with clear upgrade paths. </li>
+<li> High quality documentation </li>
+</ul>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="So-let-us-see-what-SunPy-can-do!">So let us see what SunPy can do!<a class="anchor-link" href="#So-let-us-see-what-SunPy-can-do!">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">sunpy.map</span>
+<span class="kn">import</span> <span class="nn">sunpy.data.sample</span>
+<span class="kn">from</span> <span class="nn">astropy.</span>
+<span class="c1"># Create a AIA 171 Map from some sample data</span>
+<span class="n">amap</span> <span class="o">=</span> 
+<span class="n">mymap</span> <span class="o">=</span> <span class="n">sunpy</span><span class="o">.</span><span class="n">map</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="s1">&#39;./data/aia_193.fits&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot the AIA Map object</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">mymap</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+
+<span class="c1">#Make the HP grid larger so it can be seen on the projector</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># Overlay the Heliographic Coordinate Grid</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">mymap</span><span class="o">.</span><span class="n">draw_grid</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansired">---------------------------------------------------------------------------</span>
+<span class="ansired">NameError</span>                                 Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-3-a149bed33dc8&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">      4</span> <span class="ansigreen">import</span> sunpy<span class="ansiyellow">.</span>data<span class="ansiyellow">.</span>sample<span class="ansiyellow"></span>
+<span class="ansigreen">      5</span> <span class="ansired"># Create a AIA 171 Map from some sample data</span><span class="ansiyellow"></span><span class="ansiyellow"></span>
+<span class="ansigreen">----&gt; 6</span><span class="ansiyellow"> </span>mymap <span class="ansiyellow">=</span> sunpy<span class="ansiyellow">.</span>map<span class="ansiyellow">.</span>Map<span class="ansiyellow">(</span>AIA_ROLL_IMAGE<span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<span class="ansigreen">      7</span> <span class="ansiyellow"></span>
+<span class="ansigreen">      8</span> <span class="ansired"># Plot the AIA Map object</span><span class="ansiyellow"></span><span class="ansiyellow"></span>
+
+<span class="ansired">NameError</span>: name &apos;AIA_ROLL_IMAGE&apos; is not defined</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Searching-the-VSO">Searching the VSO<a class="anchor-link" href="#Searching-the-VSO">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sunpy.net</span> <span class="kn">import</span> <span class="n">vso</span>
+<span class="kn">from</span> <span class="nn">sunpy.net.vso</span> <span class="kn">import</span> <span class="n">attrs</span> <span class="k">as</span> <span class="n">a</span>
+
+<span class="n">vc</span> <span class="o">=</span> <span class="n">vso</span><span class="o">.</span><span class="n">VSOClient</span><span class="p">()</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">vc</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">Time</span><span class="p">(</span><span class="s1">&#39;2015/12/1T00:00:20&#39;</span><span class="p">,</span> <span class="s1">&#39;2015/12/1T00:00:25&#39;</span><span class="p">),</span>
+                   <span class="n">a</span><span class="o">.</span><span class="n">Instrument</span><span class="p">(</span><span class="s1">&#39;AIA&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="n">a</span><span class="o">.</span><span class="n">Instrument</span><span class="p">(</span><span class="s1">&#39;HMI&#39;</span><span class="p">))</span>
+<span class="n">results</span>
+<span class="n">vc</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s2">&quot;/home/stuart/sunpy/data/{instrument}/{file}&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="SunPy-needs-you!">SunPy needs you!<a class="anchor-link" href="#SunPy-needs-you!">&#182;</a></h1><p><a href="https://github.com/sunpy/sunpy">https://github.com/sunpy/sunpy</a></p>
+<center>
+<img width=80% align=center src='./images/sunpy-github.png'/>
+</center>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Workshops">Workshops<a class="anchor-link" href="#Workshops">&#182;</a></h1><div class='left'>
+<ul> 
+<li> Software Carpentry style workshops, extended to week long events to cover SunPy and Astropy.</li>
+<li> First course March 2015 </li>
+<li> Being developed continuously </li>
+<li> Material available online </li>
+<li> We will run one for you! </li>
+</ul>
+</div><div class='right'>
+<img src='./images/shef_bootcamp.jpg' />
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Spicules">Spicules<a class="anchor-link" href="#Spicules">&#182;</a></h1><ul>
+<li>Story begins with Spicules</li>
+<li>Discovered by Angelo Secchi in 1887</li>
+</ul>
+<center>
+<img src='./images/spicules_NASA.jpg' />
+</center>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="A-macrospicule">A macrospicule<a class="anchor-link" href="#A-macrospicule">&#182;</a></h1><div>
+<img height=35% align='left' src='./images/example_ms.png' />
+<img width=50% align='right' src='./images/example_evo.png' />
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Macrospicules-in-context">Macrospicules in context<a class="anchor-link" href="#Macrospicules-in-context">&#182;</a></h1><div>
+<ul> 
+<li> First observed by Bohlin et al. 1975. </li>
+<ul>
+<li> Lifetimes of 5-40 min and lengths of 5-60 arcsec. </li>
+</ul>
+<li> Similarly obseved by Godoli and Mazzucconi 1967 in H&#945;. </li>
+<ul>
+<li> However we described as bright surges at the limb.</li> 
+<li> Labonte 1979 followed up this work with respect to Macrospicules and H&#945;.</li>
+</ul>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Macrospicules-in-context">Macrospicules in context<a class="anchor-link" href="#Macrospicules-in-context">&#182;</a></h1><p><div></p>
+<ul>
+<li> Dere et al 1989 presents these features using Spacelab 2 </li>
+    <ul>
+    <li> Don't find the extreme examples found previously </li>
+    <li> Length 5-23 arcsec and lifetimes of more than 3 mins</li>
+    </ul>
+<li> Studies in rotating motions are abound, Pike and Mason, 1998 </li>
+<li> There is also evidence for possible solar wind acceleration </li>
+    <ul> 
+    <li> Demonstrated the concept of multi-thermal structure i.e. cool core with a hot sheath.</li>
+    <li> Both of the above papers utilited CDS on board SoHO </li>
+    </ul>
+<li> Parenti et al. 2002 continued the examination of multi-thermal structure and the evolution of the macrospicule. </li>
+<li> Sectroscopic investigation of macrospicules has begun, best example of which is Scullion et al. 2010 </li>
+</ul>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Great,-but-why-should-I-care?">Great, but why should I care?<a class="anchor-link" href="#Great,-but-why-should-I-care?">&#182;</a></h1><ul>
+<li> Clarifying the macrospicules place in the plethora of solar ejecta. </li>
+<li> Any possible implications for coronal heating </li>
+<li> A feature which originates in the lower chromosphere but extends into the corona </li>
+</ul>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="The-Work">The Work<a class="anchor-link" href="#The-Work">&#182;</a></h1><ul>
+<li> The aim of the work is to define a set of characteristic
+properties for macrospicules. </li>
+    <ul>
+    <li> Spatial temporal and statistical. </li>
+    </ul>
+<li> Using AIA 30.4 nm on-board SDO. </li>
+<li> Cadence of 12s and resolution of 0.6 arcsec per pixel. </li>
+<li> Time sample - June 2010 throught December 2012. </li>
+    <ul>
+    <li> Taking a two hour sample on the 1st and 15th of every month. </li>
+    </ul>
+<li> The limb of the Sun was flattened out and the length and
+width of the features were measured. </li>
+<li> Survey used samples which had full parabolic evolution’s and
+lengths up to 200 arcsec in length. </li>
+</ul>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Basic-Properties">Basic Properties<a class="anchor-link" href="#Basic-Properties">&#182;</a></h1><div class='left'>
+    <center>
+    <img width=65% src='./images/len_hist.png'>
+    <img width=65% src='./images/lt_hist.png'>
+    </center>
+</div><div class='right'>
+    <center>
+    <img width=65% src='./images/vel_hist.png'> 
+    <img width=65% src='./images/width_hist.png'>
+    </center>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Basic-Properties---In-relation-to-each-other">Basic Properties - In relation to each other<a class="anchor-link" href="#Basic-Properties---In-relation-to-each-other">&#182;</a></h1><div>
+<img align='left' width=50% src='./images/length_max_vs.png' />
+<img align='right' width=50% src='./images/lifetime_vs_length.png' />
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Basic-Properties-over-the-time-sample">Basic Properties over the time sample<a class="anchor-link" href="#Basic-Properties-over-the-time-sample">&#182;</a></h1><ul>
+<li>General trend upwards in the maximum length, approx. a rate of 0.11 Mm/year.</li>
+<li>Possibly a trend in lifetime towards the solar maximum though nothing particularly conclusive.</li>
+<li>Maximum velocity is largely constant.</li>
+</ul>
+<div>
+<img align='left' width=50% src='./images/length_vs_solarcycle.png' />
+<img align='right' width=50% src='./images/life_vs_solarcycle.png' />
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Inclination-and-Latitude">Inclination and Latitude<a class="anchor-link" href="#Inclination-and-Latitude">&#182;</a></h1><ul>
+<li> Coronal Hole (CH), Coronal Hole Boundaries (CHB) and
+Quiet Sun instances. </li>
+<li> Notable is the clear difference between inclination of CH and
+CHB macrospicules. </li>
+</ul><center>
+<img width=50% src='./images/tilt_vs_lat.png' />
+</center>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Ballistics-and-energetics">Ballistics and energetics<a class="anchor-link" href="#Ballistics-and-energetics">&#182;</a></h1><div>
+<ul>
+<li> It is found that the macrospicules fall sligtly slower than expected, of the order of ~ 1 min. </li>
+<li> We find that they are widest before the peak of their 'parabolic' evolution. </li>
+<li> Implies there is an underlying physics dictating their regression, other than gravity. </li>
+</ul>
+</div><div>
+<img width=50% align='left' src='./images/times_falling.png' />
+<img width=50% align='right' src='./images/width_percent.png' />
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h1><ul>
+<li> Spactial Properties </li>
+    <ul>
+    <li> Length - range of 14.0 - 60.4 Mm and mean of 28.1 Mm </li>
+    <li> Width - range of 3.1 - 16.1 Mm and mean of 7.6 Mm </li>
+    <li> Maximum Velocity - range of 54.1 - 109.7 km/s </li>
+    </ul>
+<li> Lifetimes in this case are in a range 2.7 - 30.6 min and mean
+of 13.9 min. </li>
+<li> Widths become smaller after the peak of their trajectory. </li>
+<li> Fall back to limb time is slower than expected. </li>
+</ul>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="A-case-study">A case study<a class="anchor-link" href="#A-case-study">&#182;</a></h1><ul>
+<li>Jet observed at the limb using SST</li>
+<li>In H&#945; so we can compare this to the H&#945; macrospicules from LaBonte 1979b</li>
+<li>Well we say at the limb</li>
 </ul>
 
-</div><div class='right fragment'>
-<h3> Files by Extension </h3>
-
-<ol class='list'>
-    <li> 'genx': 30525 </li>
-    <li> '.pro': 24383 </li>
-    <li> '.dat': 19437 </li>
-    <li> '.fts': 11657 </li>
-    <li> '.log': 10885 </li>
-    <li> '.sav': 6579</li>
-</ol>
-
 </div>
 </div>
-</div>
-</div></section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Facts-about-SSW">Facts about SSW<a class="anchor-link" href="#Facts-about-SSW">&#182;</a></h2><ul>
-<li>Distributed via Perl download (FTP) scripts or rsync.</li>
-<li>'gen' tree is managed by people at GSFC.</li>
-<li>Other trees are managed by other groups, with varying quality control.</li>
-<li>'SolarSoft' came into existence around the launch of the SOHO satellite (20 years ago).</li>
+<p><img align='center width=90%'src='./images/SST_MS.png' /></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="SDO-Movies">SDO Movies<a class="anchor-link" href="#SDO-Movies">&#182;</a></h1><div style="margin: 0 auto; width:800px;">
+<video width="800" height"600" controls>
+    <source src="./images/St_And_Fjet_at_304.ogv" type="video/ogg">
+</video>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div style="margin: 0 auto; width:800px;">
+<video width="800" height"600" controls>
+    <source src="./images/St_And_Fjet_at_335.ogv" type="video/ogg">
+</video>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div style="margin: 0 auto; width:800px;">
+<video width="800" height"600" controls>
+    <source src="./images/St_And_Fjet_at_211.ogv" type="video/ogg">
+</video>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div style="margin: 0 auto; width:800px;">
+<video width="800" height"600" controls>
+    <source src="./images/St_And_Fjet_at_171.ogv" type="video/ogg">
+</video>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Time-distance-graphs-for-SDO-wavelengths">Time distance graphs for SDO wavelengths<a class="anchor-link" href="#Time-distance-graphs-for-SDO-wavelengths">&#182;</a></h1><ul>
+<li>Using the measuring tool from the previous work, for the multiple coronal lines.</li>
+<li>Note the intersting peaks in the hotter lines against that of the cooler He 30.4 nm line.</li>
+</ul>
+<center>
+<img width=60% src='./images/Ls_len_plot.png'/>
+</center>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Time-distance-plot-for-the-central-H&#945;-lines.">Time distance plot for the central H&#945; lines.<a class="anchor-link" href="#Time-distance-plot-for-the-central-H&#945;-lines.">&#182;</a></h1><center>
+<img src='./images/Core_H_alpha.png' />
+</center>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Temperature-Maps,-Leonard-&amp;-Morgan,-2014">Temperature Maps, Leonard &amp; Morgan, 2014<a class="anchor-link" href="#Temperature-Maps,-Leonard-&amp;-Morgan,-2014">&#182;</a></h1><ul>
+<li>Light measured by each AIA channel is emitted by plasma at a different temperature.</li>
+<li>Comparison of the different channels allows us to estimate the temperature distribution of the plasma.</li>
+<li>Temperature was estimated in this way for the duration of the macrospicule.</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div style="margin: 0 auto; width:800px;">
+<video width="800" height"600" controls>
+    <source src="./images/temperature_map.ogv" type="video/ogg">
+    <source src="./images/temperature_map.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h1><ul>
+<li>'Macrospicules' can be obsered in the hotter coronal lines.</li>
+<li>As well as the cooler H&#945; and He 30.4 nm lines.</li>
+<li>Multiple instances of 'jetting' activity within the macrospicule.</li>
+<li>The macrospicules do have an affect of the atmosphere, however whether this is significant or not is yet to be determined.</li>
 </ul>
 
 </div>
@@ -478,15 +900,6 @@ True
 <img width=80% src='./images/sunpy_logo_compact_800x994.png'/>
 
 </div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 style="font-size:200%; text-align:center"> Welcome to the Future </h1>
 </div>
 </div>
 </div></section></section>
